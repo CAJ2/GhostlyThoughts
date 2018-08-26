@@ -1,0 +1,41 @@
+<header> 
+    <div class="ui small icon menu">
+        {{#if @blog.facebook}}
+            <a class="ui item" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener"><i class="facebook f icon"></i></a>
+        {{/if}}
+        {{#if @blog.twitter}}
+            <a class="ui item" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener"><i class="twitter icon"></i></a>
+        {{/if}}
+        <a class="ui right aligned item" href="{{@blog.url}}/ghost"><i class="lock icon"></i>Admin</a>
+    </div>
+    {{#if @blog.logo}}
+        <div class="ui basic segment">
+            <img class="ui centered medium rounded image" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+        </div>
+    {{else}}
+        <div class="ui center aligned huge header">
+            {{#if @blog.icon}}
+                <img class="ui large rounded image" src="{{@blog.icon}}" alt="{{@blog.title}}" />
+            {{/if}}
+            <div class="content">
+                {{@blog.title}}
+                <div class="sub header">{{@blog.description}}</div>
+            </div>
+        </div>
+    {{/if}}
+    <nav class="ui huge secondary main menu container">
+        {{#if @blog.navigation}}
+            {{navigation}}
+        {{/if}}
+
+        <div class="right item">
+            <div class="ui category search input">
+                <div class="ui transparent icon input">
+                    <input id="search-field" class="prompt" placeholder="Search..." type="text">
+                    <i class="search link icon"></i>
+                </div>
+                <div id="results" class="results" style="margin-left: -250px"></div>
+            </div>
+        </div>
+    </nav>
+</header>

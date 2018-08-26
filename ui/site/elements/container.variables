@@ -1,0 +1,11 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@textFontFamily : 'Libre Baskerville', 'Vollkorn', Times, serif;
+
+@textSize : 20px;
+
+@textLineHeight : 1.58;
+
+@textWidth : 800px;

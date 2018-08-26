@@ -1,0 +1,32 @@
+<article class="ui link card {{post_class}}">
+    <a class="content" href="{{url}}">
+        {{#if feature_image}}
+            <img class="right floated small rounded ui image" src="{{feature_image}}">
+        {{/if}}
+        <header>
+            <h2 class="ui header">{{title}}</h2>
+        </header>
+        <div class="meta">
+            {{date published_at format="LL"}}
+        </div>
+        <section class="description">
+            <p>{{excerpt words="50"}}</p>
+        </section>
+    </a>
+    <footer class="extra content">
+
+        <span class="right floated">{{reading_time}}</span>
+
+        <span>
+            {{#primary_author}}
+                <a href="{{url}}">
+                    {{#if profile_image}}
+                        <img class="ui avatar image" src="{{profile_image}}">
+                    {{/if}}
+                    {{name}}
+                </a>
+            {{/primary_author}}
+        </span>
+
+    </footer>
+</article>

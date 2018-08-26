@@ -1,0 +1,8 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.container blockquote {
+    border-left: 5px solid rgba(34, 139, 34, .5);
+    padding-left: 10px;
+}

@@ -1,0 +1,57 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{> "header"}}
+
+{{#author}}
+{{#if profile_image}}
+    <img class="ui centered small circular image" src="{{profile_image}}" alt="{{name}}" />
+{{/if}}
+{{!-- Everything inside the #author tags pulls data from the author --}}
+<header class="ui center aligned huge header container {{#if cover_image}}" style="background-image: url({{cover_image}}){{else}}no-cover{{/if}}">
+    <div class="content">
+        {{name}}
+        {{#if bio}}
+            <div class="sub header">{{bio}}</h2>
+        {{/if}}
+    </div>
+</header>
+
+<div class="ui container">
+    <div class="ui labeled icon small five item menu">
+        <a class="item">
+            <i class="align left icon"></i>
+            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+        </a>
+        <a class="item" href="https://www.google.com/maps/search/{{location}}" target="_blank" rel="noopener">
+            <i class="location arrow icon"></i>
+            {{location}}
+        </a>
+        <a class="item" href="{{website}}" target="_blank" rel="noopener">
+            <i class="globe icon"></i>
+            Website
+        </a>
+        <a class="item" href="{{facebook_url}}" target="_blank" rel="noopener">
+            <i class="facebook f icon"></i>
+            {{facebook}}
+        </a>
+        <a class="item" href="{{twitter_url}}" target="_blank" rel="noopener">
+            <i class="twitter icon"></i>
+            {{twitter}}
+        </a>
+    </div>
+</div>
+
+{{/author}}
+
+<main id="site-main" class="ui container">
+    <div class="ui horizontal divider"></div>
+    <div class="ui link doubling stackable three cards">
+        {{#foreach posts}}
+
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+
+        {{/foreach}}
+    </div>
+</main>

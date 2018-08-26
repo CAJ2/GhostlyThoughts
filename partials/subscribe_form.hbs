@@ -1,0 +1,18 @@
+<form method="post" action="{{action}}" class="ui form {{form_class}}">
+    {{! This is required for the form to work correctly }}
+    {{hidden}}
+
+    <div class="field {{#if error}} error{{/if}}">
+        <label>Email Address</label>
+        {{input_email class=input_class placeholder=placeholder value=email autofocus=autofocus}}
+    </div>
+    <button class="ui button {{button_class}}" type="submit">Subscribe</button>
+    {{! This is used to get extra info about where this subscriber came from }}
+    {{script}}
+
+    {{#if error}}
+        <div class="ui error message">
+            <div class="header">{{{error.message}}}</div>
+        </div>
+    {{/if}}
+</form>

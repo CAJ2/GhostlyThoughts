@@ -1,0 +1,17 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@pageFont : 'Raleway', 'Lato', sans-serif;
+@headerFont : 'Raleway', 'Lato', sans-serif;
+
+@emSize : 18px;
+@fontSize : 18px;
+
+@pageBackground : #fafafa;
+
+/**
+ * Link Styles
+ */
+@linkColor : #333;
+@linkHoverColor : #228b22;

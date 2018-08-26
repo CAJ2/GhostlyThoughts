@@ -1,0 +1,43 @@
+{
+    "name": "ghostly-thoughts",
+    "description": "Theme for christianjohansen.com",
+    "demo": "https://christianjohansen.com",
+    "version": "1.0.0",
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip"
+    },
+    "author": {
+        "name": "Christian Johansen",
+        "email": "christian@christianjohansen.com",
+        "url": "https://christianjohansen.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CAJ2/GhostlyThoughts.git"
+    },
+    "bugs": "https://github.com/CAJ2/GhostlyThoughts/issues",
+    "devDependencies": {},
+    "config": {
+        "posts_per_page": 25
+    },
+    "dependencies": {
+        "semantic-ui": "^2.3.3"
+    }
+}

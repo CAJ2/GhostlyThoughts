@@ -1,0 +1,32 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{> "header"}}
+
+{{#tag}}
+{{#if feature_image}}
+    <img class="ui centered small circular image" src="{{feature_image}}" alt="{{name}}" />
+{{/if}}
+<header class="ui center aligned huge header container">
+    <div class="content">
+        {{name}}
+        {{#if description}}
+            <div class="sub header">{{description}}</div>
+        {{else}}
+            <div class="sub header">{{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+        {{/if}}
+    </div>
+</header>
+{{/tag}}
+
+<main id="site-main" class="ui container">
+    <div class="ui horizontal divider"></div>
+    <div class="ui link doubling stackable three cards">
+        {{#foreach posts}}
+
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+
+        {{/foreach}}
+    </div>
+</main>

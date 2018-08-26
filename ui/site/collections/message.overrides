@@ -1,0 +1,8 @@
+/*******************************
+        Site Overrides
+*******************************/
+
+.ui.borderless.message {
+    box-shadow: none;
+    background: transparent;
+}

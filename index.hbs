@@ -1,0 +1,30 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{> "header"}}
+
+{{!-- The main content area --}}
+<main id="site-main" class="ui container">
+    <div class="ui horizontal divider"></div>
+    <div class="ui grid">
+        <div class="ten wide column">
+            <div class="ui link one cards">
+                {{#foreach posts}}
+
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+
+                {{/foreach}}
+            </div>
+        </div>
+        <div class="six wide column">
+            {{#if @labs.subscribers}}
+                <div class="ui segment">
+                    {{subscribe_form placeholder="youremail@example.com"}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</main>

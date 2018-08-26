@@ -1,0 +1,128 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{> "header"}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+<main id="site-main" style="margin-bottom: 40px">
+
+    <article class="{{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+
+        <header class="ui text container">
+            <section class="ui grid padded">
+                <div class="four column row">
+                <h5 class="ui left floated column" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</h5>
+                {{#primary_tag}}
+                    <h5 class="ui right floated right aligned column"><a href="{{url}}">{{name}}</a></h5>
+                {{/primary_tag}}
+                </div>
+            </section>
+            <h1 class="ui center aligned header">
+                <div class="content">{{title}}
+                    <div class="ui faded divider"></div>
+                    <h3 class="sub header">
+                        <span>written by</span>
+                        <a href="{{primary_author.url}}">{{primary_author.name}}</a>
+                    </h3>
+                </div>
+            </h1>
+        </header>
+
+        <section class="post-content ui segment rounded very padded text container">
+            <div class="left ui tiny attached rail" style="width: 250px !important">
+                <div class="ui sticky">
+                    {{#prev_post}}
+                        <a class="ui borderless icon message" href="{{url}}">
+                            <i class="left angle icon"></i>
+                            <div class="content">
+                                <div class="header">Previous Post</div>
+                                <p>{{title}}</p>
+                            </div>
+                        </a>
+                    {{/prev_post}}
+                </div>
+            </div>
+
+            <div class="right ui tiny attached rail" style="width: 250px !important">
+                <div class="ui sticky">
+                    {{#next_post}}
+                        <a class="ui borderless icon message" href="{{url}}">
+                            <div class="content">
+                                <div class="header">Next Post</div>
+                                <p>{{title}}</p>
+                            </div>
+                            <i class="right angle icon" style="margin-right: 0em; margin-left: 0.6em"></i>
+                        </a>
+                    {{/next_post}}
+                </div>
+            </div>
+
+            {{content}}
+        </section>
+
+        <section class="ui segments text container">
+            <div class="ui center aligned segment">
+                <div class="ui header">About The {{#if authors.[1]}}Authors{{else}}Author{{/if}}</div>
+            </div>
+            <div class="ui segment">
+                <div class="ui items">
+                {{#foreach authors}}
+                    <div class="item">
+                        <div class="ui small circular image">
+                            <img src="{{img_url profile_image}}">
+                        </div>
+                        <div class="content">
+                            <a class="header" href="{{url}}">{{name}}</a>
+                            <div class="description"><p>{{bio}}</p></div>
+                        </div>
+                    </div>
+                {{/foreach}}
+                </div>
+            </div>
+        </section>
+
+        {{!--
+        <section class="post-full-comments">
+            If you want to embed comments, this is a good place to do it!
+        </section>
+        --}}
+
+    </article>
+
+</main>
+
+{{!-- Links to related posts --}}
+<aside class="ui container">
+    {{#if primary_tag}}
+        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+            {{#if related_posts}}
+                <div class="ui segments">
+                    <h1 class="ui center aligned segment">Related Posts</h1>
+                    <div class="ui secondary segment">
+                        <div class="ui link three cards doubling grid">
+                            {{#foreach related_posts}}
+                                {{> "post-card"}}
+                            {{/foreach}}
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        {{/get}}
+    {{/if}}
+</aside>
+
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+$(document).ready(function () {
+    var $postContent = $(".post-content");
+    $postContent.fitVids();
+});
+</script>
+{{/contentFor}}

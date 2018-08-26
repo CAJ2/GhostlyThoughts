@@ -1,0 +1,117 @@
+/*******************************
+          Default Paths
+*******************************/
+
+module.exports = {
+
+  // base path added to all other paths
+  base : '',
+
+  // base path when installed with npm
+  pmRoot: 'semantic/',
+
+  // octal permission for output files, i.e. 644 (false does not adjust)
+  permission : 744,
+
+  // whether to generate rtl files
+  rtl        : false,
+
+  // file paths
+  files: {
+    config   : 'semantic.json',
+    site     : 'ui/site',
+    theme    : 'ui/theme.config'
+  },
+
+  // folder paths
+  paths: {
+    source: {
+      config      : 'ui/theme.config',
+      definitions : 'ui/definitions/',
+      site        : 'ui/site/',
+      themes      : 'ui/themes/'
+    },
+    output: {
+      packaged     : 'assets/ui/',
+      uncompressed : 'assets/ui/components/',
+      compressed   : 'assets/ui/components/',
+      themes       : 'assets/ui/themes/'
+    },
+    clean : 'assets/ui/'
+  },
+
+  // components to include in package
+  components: [
+
+    // global
+    'reset',
+    'site',
+
+    // elements
+    'button',
+    'container',
+    'divider',
+    'flag',
+    'header',
+    'icon',
+    'image',
+    'input',
+    'label',
+    'list',
+    'loader',
+    'rail',
+    'reveal',
+    'segment',
+    'step',
+
+    // collections
+    'breadcrumb',
+    'form',
+    'grid',
+    'menu',
+    'message',
+    'table',
+
+    // views
+    'ad',
+    'card',
+    'comment',
+    'feed',
+    'item',
+    'statistic',
+
+    // modules
+    'accordion',
+    'checkbox',
+    'dimmer',
+    'dropdown',
+    'embed',
+    'modal',
+    'nag',
+    'popup',
+    'progress',
+    'rating',
+    'search',
+    'shape',
+    'sidebar',
+    'sticky',
+    'tab',
+    'transition',
+
+    // behaviors
+    'api',
+    'form',
+    'state',
+    'visibility'
+  ],
+
+  // whether to load admin tasks
+  admin: false,
+
+  // globs used for matching file patterns
+  globs      : {
+    ignored    : '!(*.min|*.map|*.rtl)',
+    ignoredRTL : '!(*.min|*.map)'
+  }
+
+};

@@ -1,0 +1,13 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.footer.slanted {
+    transform: rotate(-1.5deg);
+    margin: 50px -50px 0 -50px;
+    padding: 80px 0 50px;
+}
+
+.ui.footer.slanted > .container {
+    transform: rotate(1.5deg);
+}

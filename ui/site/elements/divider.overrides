@@ -1,0 +1,21 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.faded.divider {
+    position: relative;
+    height: 1px;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.ui.faded.divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15%;
+    right: -15%;
+    width: 130%;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, @grey, transparent);
+}

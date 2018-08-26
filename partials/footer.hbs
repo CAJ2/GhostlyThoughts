@@ -1,0 +1,11 @@
+<footer class="ui inverted vertical footer segment" style="margin-top: 40px">
+    <div class="ui center aligned container">
+        <div class="ui centered mini">{{@blog.title}} &copy; {{date format="YYYY"}}</div>
+        <nav class="ui horizontal inverted small divided link list">
+            <a class="item" href="{{@blog.url}}">Home</a>
+            {{#if @blog.facebook}}<a class="item" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
+            {{#if @blog.twitter}}<a class="item" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+            <a class="item" href="https://ghost.org" target="_blank" rel="noopener">Made using Ghost</a>
+        </nav>
+    </div>
+</footer>

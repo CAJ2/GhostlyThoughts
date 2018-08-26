@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@boxShadow : 0 0 10px 0 #d4d4d5;
+
+@linkHoverBoxShadow : 0 0 15px 0 #bcbdbd;

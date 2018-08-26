@@ -1,0 +1,25 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{> "header"}}
+
+<img class="ui centered medium rounded image" src="{{asset "404.png"}}" alt="{{name}}" />
+<header class="ui center aligned huge header container">
+    <div class="content">
+        Good job! Now everyone is confused.
+        <div class="sub header">The <s>explanation</s> page you were looking for does not exist.</div>
+        <div class="sub header">Maybe it will in the future. Don't get your hopes up.</div>
+    </div>
+</header>
+
+<main id="site-main" class="ui container">
+    <div class="ui horizontal divider"></div>
+    <div class="ui link doubling stackable three cards">
+        {{#foreach posts}}
+
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+
+        {{/foreach}}
+    </div>
+</main>

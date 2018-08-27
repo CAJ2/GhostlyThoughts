@@ -28,6 +28,8 @@ var
   // rtl
   buildRTL     = require('./tasks/rtl/build'),
   watchRTL     = require('./tasks/rtl/watch')
+
+  zip          = require('gulp-zip');
 ;
 
 
@@ -70,3 +72,22 @@ if(config.rtl) {
   gulp.task('watch-rtl', 'Watch files as RTL', watchRTL);
   gulp.task('build-rtl', 'Build all files as RTL', buildRTL);
 }
+
+/*--------------
+Package into a zip file
+---------------*/
+gulp.task('zip', ['build'], function () {
+  var targetDir = 'dist/';
+  var themeName = require('./package.json').name;
+  var filename = themeName + '.zip';
+
+  return gulp.src([
+    '**',
+    '!node_modules', '!node_modules/**',
+    '!dist', '!dist/**',
+    '!ui', '!ui/**',
+    '!tasks', '!tasks/**'
+  ])
+    .pipe(zip(filename))
+    .pipe(gulp.dest(targetDir));
+});

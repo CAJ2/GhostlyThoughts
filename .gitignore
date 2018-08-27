@@ -3,6 +3,7 @@ node_modules
 
 # Built assets
 assets/ui
+dist
 
 .vscode
 

@@ -3,7 +3,6 @@
 *******************************/
 
 @pageFont : 'Raleway', 'Lato', sans-serif;
-@headerFont : 'Raleway', 'Lato', sans-serif;
 
 @emSize : 18px;
 @fontSize : 18px;

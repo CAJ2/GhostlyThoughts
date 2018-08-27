@@ -2,7 +2,8 @@
     User Variable Overrides
 *******************************/
 
-@textFontFamily : 'Libre Baskerville', 'Vollkorn', Times, serif;
+//@textFontFamily : 'Libre Baskerville', 'Vollkorn', Times, serif;
+@textFontFamily : 'Open Sans', Lato, sans-serif;
 
 @textSize : 20px;
 

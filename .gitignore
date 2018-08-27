@@ -1,4 +1,8 @@
+# Dependencies
 node_modules
+
+# Built assets
+assets/ui
 
 .vscode
 
